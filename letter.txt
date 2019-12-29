@@ -1,0 +1,28 @@
+Dear Professor John:
+  We are Gruop 3 from (课程名的英文是啥来着。。). We are exploring some problems about the Fooling. We now want to know:
+    Whether or not to be fooled depends on the network structure or the dataset?
+    Can we decrease accuracy by injecting poisoned data?
+  As you suggeseted this Tuesday, we designed the experiments and tell you all the steps. Here is our experiment:
+  Experiment 1:
+  1. We choose MNIST as our dataset and a ResNet-6/7 as our models, and a fooler to generate fooling images.(具体什么方式没说，要不FGSM？ 这个比较快)
+  2. We use different initial parameters to train a same ResNet-6 model we prepared, and make sure the accuarcy is more than 99.3%.
+  3. Randomly choose one network, and train the fooler to which can make the network misjudge 10% of all data.
+  4. Then we use this trained fooler in another network, see if this network also misjudge 10% data.
+  5. Repeat step 2~4 10 times, record if fooling happens in both networks in most instances.
+  
+  6. If it is, then we try the fooler on ResNet-7 or deeper to see if if can work on different structures with same data.
+  7. If not, then we may get a conclusion that too different network will be fooled with same fooler in the low probability. Then we come up with a method to output: class or uncertain.
+  
+  Experiment 2:
+  1. Train a network and generate a fooler, then use the fooling images as training set to train the same model with same parameters. See the change of accuarcy.
+  2. Repeat Step 1 serveral times to get the conclusion.
+  
+The work is cooperated by Jiasen Li, Ning Yang and Enze Sun from Group 3, and our work allocation is:
+  Jiasen Li: provide the model, do the specific operation, draw conclusions.
+  Ning Yang: do the operation, process data and result.
+  Enze Sun: provide the fooler, do the operation.
+  
+Above is our experimental ideas. Looking forward to your helpful suggestions.
+
+Best Regards,
+Ning Yang
